@@ -85,14 +85,9 @@ jobs:
             
             ['**/*?.ogg']
             channels = 2
-            transcode_ogg = false
             sampling_frequency = 44100
             target_pitch = 1.5
-            target_bitrate_control_metric = 96000 
-            ogg_obfuscation = false
-            two_pass_vorbis_optimization_and_validation = false
-            bitrate_control_mode = 'CQF'
-            empty_audio_optimization = false
+            target_bitrate_control_metric = 96000
 
 
             # Lossless music files get pitch shifted and compressed with good quality
