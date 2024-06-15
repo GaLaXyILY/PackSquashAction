@@ -85,7 +85,6 @@ jobs:
             
             ['**/*?.ogg']
             transcode_ogg = false
-            two_pass_vorbis_optimization_and_validation = true
             target_pitch = 1.5
             target_bitrate_control_metric = 128000
 
