@@ -84,17 +84,21 @@ jobs:
             spooling_buffers_size = 128 
             
             ['**/*?.ogg']
-            transcode_ogg = false
+            channels = 2
+            transcode_ogg = true
+            sampling_frequency = 44100
             target_pitch = 1.5
-            target_bitrate_control_metric = 128000
+            target_bitrate_control_metric = 48 
+            ogg_obfuscation = true
+            two_pass_vorbis_optimization_and_validation = true
+            bitrate_control_mode = 'CQF'
+            empty_audio_optimization = false
 
 
             ['**/*?.{flac,wav}']
             channels = 2
             sampling_frequency = 44100
             target_pitch = 1.5
-            minimum_bitrate = 64000
-            maximum_bitrate = 128000
 
             ['**/*.jsonc']
             minify_json = false
