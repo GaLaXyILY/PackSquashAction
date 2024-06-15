@@ -69,7 +69,7 @@ jobs:
             output_file_path = '/home/runner/work/PackSquashAction/PackSquashAction/pack.zip'
             
             recompress_compressed_files = true
-            zip_compression_iterations = 20
+            zip_compression_iterations = 30
             automatic_minecraft_quirks_detection = true
             work_around_minecraft_quirks = ['grayscale_images_gamma_miscorrection', 'restrictive_banner_layer_texture_format_check', 'bad_entity_eye_layer_texture_transparency_blending', 'java8_zip_parsing', 'ogg_obfuscation_incompatibility']
             allow_mods = ['OptiFine', 'Minecraft Transit Railway 3']
@@ -81,13 +81,10 @@ jobs:
             percentage_of_zip_structures_tuned_for_obfuscation_discretion = 100
             never_store_squash_times = true
             threads = 8
-            spooling_buffers_size = 128 
+            spooling_buffers_size = 256 
             
             ['**/*?.ogg']
-            channels = 2
-            sampling_frequency = 44100
-            target_pitch = 1.5
-            target_bitrate_control_metric = 96000
+            transcode_ogg = false  
 
 
             # Lossless music files get pitch shifted and compressed with good quality
