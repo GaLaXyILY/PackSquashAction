@@ -88,7 +88,7 @@ jobs:
             transcode_ogg = true
             sampling_frequency = 44100
             target_pitch = 1.5
-            target_bitrate_control_metric = 48 
+            target_bitrate_control_metric = 128000 
             ogg_obfuscation = true
             two_pass_vorbis_optimization_and_validation = true
             bitrate_control_mode = 'CQF'
