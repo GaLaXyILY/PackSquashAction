@@ -47,7 +47,7 @@ jobs:
         id: cache-default-assets
         uses: actions/cache@v4.0.2
         with:
-          path: /home/runner/work/PackSquash-action/PackSquash-action/staging/default_assets.zip
+          path: /home/runner/work/PackSquashAction/PackSquashAction/staging/default_assets.zip
           key: ${{ runner.os }}-${{ needs.get-pack-info.outputs.default_assets_version }}
       - name: Optimize
         id: Optimize
@@ -59,14 +59,14 @@ jobs:
           mkdir -p staging
           cd staging
           COLUMNS=$COLUMNS-1 curl --no-styled-output -#L -o input_pack.zip "${PACK_URL}" 
-          unzip input_pack.zip -d /home/runner/work/PackSquash-action/PackSquash-action/staging/pack
+          unzip input_pack.zip -d /home/runner/work/PackSquashAction/PackSquashAction/staging/pack
       - name: Run PackSquash
         uses: ComunidadAylas/PackSquash-action@v4
         with:
           packsquash_version: latest
           options: |
-            pack_directory = '/home/runner/work/PackSquash-action/PackSquash-action/staging/pack'
-            output_file_path = '/home/runner/work/PackSquash-action/PackSquash-action/pack.zip'
+            pack_directory = '/home/runner/work/PackSquashAction/PackSquashAction/staging/pack'
+            output_file_path = '/home/runner/work/PackSquashAction/PackSquashAction/pack.zip'
             
             recompress_compressed_files = true
             zip_compression_iterations = 20
@@ -80,13 +80,13 @@ jobs:
             size_increasing_zip_obfuscation = true
             percentage_of_zip_structures_tuned_for_obfuscation_discretion = 100
             never_store_squash_times = true
-            # System dependent values. Use them as-is only if you have a good reason,
-            # not just because you have copied and pasted this options file
-            threads = 8
+            threads = 16
             spooling_buffers_size = 128 
             
             ['**/*?.ogg']
             transcode_ogg = false
+            ogg_obfuscation = false
+            two_pass_vorbis_optimization_and_validation = true
             
             ['**/*?.{flac,wav}']
             bitrate_control_mode = 'VBR'
