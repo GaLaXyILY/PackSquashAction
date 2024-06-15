@@ -110,9 +110,11 @@ jobs:
             color_quantization_target = 'none'
             maximum_width_and_height = 65535
             skip_alpha_optimizations = true
+            color_quantization_dithering_level = 1
 
             ['**/*.{fsh,vsh}']
-            shader_source_transformation_strategy = 'keep_as_is'
+            shader_source_transformation_strategy = 'minify'
+            is_top_level_shader = false
 
             ['**/*.properties']
             minify_properties = false
