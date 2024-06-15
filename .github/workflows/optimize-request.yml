@@ -88,17 +88,19 @@ jobs:
             transcode_ogg = false
             sampling_frequency = 44100
             target_pitch = 1.5
-            target_bitrate_control_metric = 128000 
+            target_bitrate_control_metric = 96000 
             ogg_obfuscation = false
-            two_pass_vorbis_optimization_and_validation = true
+            two_pass_vorbis_optimization_and_validation = false
             bitrate_control_mode = 'CQF'
             empty_audio_optimization = false
 
 
+            # Lossless music files get pitch shifted and compressed with good quality
             ['**/*?.{flac,wav}']
             channels = 2
             sampling_frequency = 44100
             target_pitch = 1.5
+            target_bitrate_control_metric = 96000
 
             ['**/*.jsonc']
             minify_json = false
