@@ -84,12 +84,8 @@ jobs:
             spooling_buffers_size = 128 
             
             ['**/*?.ogg']
-            transcode_ogg = true
-            ogg_obfuscation = true
+            transcode_ogg = false
             two_pass_vorbis_optimization_and_validation = true
-            bitrate_control_mode = 'VBR'
-            channels = 2
-            sampling_frequency = 44100
             target_pitch = 1.5
             target_bitrate_control_metric = 128000
 
