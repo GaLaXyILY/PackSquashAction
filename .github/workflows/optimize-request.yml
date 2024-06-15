@@ -88,8 +88,6 @@ jobs:
             target_pitch = 1.5
             target_bitrate_control_metric = 128000
 
-            ['**/*?.ogg']
-            transcode_ogg = false
 
             ['**/*?.{flac,wav}']
             channels = 2
