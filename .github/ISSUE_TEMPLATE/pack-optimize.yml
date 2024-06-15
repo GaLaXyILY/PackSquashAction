@@ -1,0 +1,46 @@
+name: Optimize resource pack
+description: Request an automated optimize resource pack
+title: "[Pack]: "
+labels: ["conversion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please be sure to include a directly downloadable link to your pack. The action will fail if the pack cannot be downloaded.
+  - type: input
+    id: java-pack-direct-download-url
+    attributes:
+      label: Java Pack Direct Download URL
+      description: Please provide a direct link to the Java Edition resource pack to be converted.
+      placeholder: e.g. https://github.com/Paradisu/ParadisuResourcePack/releases/latest/download/ParadisuResourcePack.zip
+    validations:
+      required: true
+  - type: dropdown
+    id: default-assets-version
+    attributes:
+      label: Default Assets Version
+      description: Optinally select the default assets version to use for the converted pack.
+      options:
+        - 1.13.2
+        - 1.14.4
+        - 1.15.2
+        - 1.16.5
+        - 1.17.1
+        - 1.18.2
+        - 1.19.2
+        - 1.19.3
+        - 1.19.4
+        - '1.20'
+        - 1.20.1
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: |
+        You further agree that you either own or have permission to use any content you have linked to within this form.
+      options:
+        - label: I agree to follow this project's Code of Conduct. I have permission to use all assets I have linked to within this form.
+          required: true
