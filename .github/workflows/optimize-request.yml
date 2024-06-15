@@ -80,7 +80,7 @@ jobs:
             size_increasing_zip_obfuscation = true
             percentage_of_zip_structures_tuned_for_obfuscation_discretion = 100
             never_store_squash_times = true
-            threads = 16
+            threads = 8
             spooling_buffers_size = 128 
             
             ['**/*?.ogg']
@@ -88,18 +88,20 @@ jobs:
             target_pitch = 1.5
             target_bitrate_control_metric = 128000
 
-            
+            ['**/*?.ogg']
+            transcode_ogg = false
+
             ['**/*?.{flac,wav}']
-            bitrate_control_mode = 'VBR'
             channels = 2
             sampling_frequency = 44100
             target_pitch = 1.5
-            target_bitrate_control_metric = 128000
+            minimum_bitrate = 64000
+            maximum_bitrate = 128000
 
-            
             ['**/*.jsonc']
             minify_json = false
             delete_bloat_keys = false
+
 
             ['**/*.png']
             image_data_compression_iterations = 15
