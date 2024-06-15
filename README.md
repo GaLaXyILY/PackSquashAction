@@ -1,1 +1,2 @@
 # PackSquashAction
+A Minecraft: Java Edition resource and data pack optimizer which aims to achieve the best possible compression, performance, and protection, improving pack distribution, storage, and in-game load times. Anecdotal evidence shows that, with the default options, version v0.2.1 was capable of reducing the size of the Witchcraft & Wizardary resource pack ZIP file by Floo Network (version 1.6.2) from 118 MiB to 57 MiB, a 51.69% size reduction, and it got better over time.
