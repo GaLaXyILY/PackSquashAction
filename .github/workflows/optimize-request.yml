@@ -69,12 +69,12 @@ jobs:
             output_file_path = '/home/runner/work/PackSquashAction/PackSquashAction/pack.zip'
             
             recompress_compressed_files = true
-            zip_compression_iterations = 30
+            zip_compression_iterations = 255
             automatic_minecraft_quirks_detection = true
             work_around_minecraft_quirks = ['grayscale_images_gamma_miscorrection', 'restrictive_banner_layer_texture_format_check', 'bad_entity_eye_layer_texture_transparency_blending', 'java8_zip_parsing', 'ogg_obfuscation_incompatibility']
             allow_mods = ['OptiFine', 'Minecraft Transit Railway 3']
             skip_pack_icon = false
-            validate_pack_metadata_file = true
+            validate_pack_metadata_file = false
             ignore_system_and_hidden_files = false
             zip_spec_conformance_level = 'disregard'
             size_increasing_zip_obfuscation = true
@@ -100,7 +100,7 @@ jobs:
 
 
             ['**/*.png']
-            image_data_compression_iterations = 15
+            image_data_compression_iterations = 255
             color_quantization_target = 'none'
             maximum_width_and_height = 65535
             skip_alpha_optimizations = true
