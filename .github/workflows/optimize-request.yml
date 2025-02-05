@@ -61,7 +61,7 @@ jobs:
           COLUMNS=$COLUMNS-1 curl --no-styled-output -#L -o input_pack.zip "${PACK_URL}" 
           unzip input_pack.zip -d /home/runner/work/PackSquashAction/PackSquashAction/staging/pack
       - name: Run PackSquash
-        uses: ComunidadAylas/PackSquash-action@v4
+        uses: ComunidadAylas/PackSquash-action@v4.0.3
         with:
           packsquash_version: latest
           options: |
@@ -69,12 +69,12 @@ jobs:
             output_file_path = '/home/runner/work/PackSquashAction/PackSquashAction/pack.zip'
             
             recompress_compressed_files = true
-            zip_compression_iterations = 255
+            zip_compression_iterations = 5
             automatic_minecraft_quirks_detection = true
-            work_around_minecraft_quirks = ['grayscale_images_gamma_miscorrection', 'restrictive_banner_layer_texture_format_check', 'bad_entity_eye_layer_texture_transparency_blending', 'java8_zip_parsing', 'ogg_obfuscation_incompatibility']
+            automatic_asset_types_mask_detection = true
             allow_mods = ['OptiFine', 'Minecraft Transit Railway 3']
             skip_pack_icon = false
-            validate_pack_metadata_file = false
+            validate_pack_metadata_file = true
             ignore_system_and_hidden_files = false
             zip_spec_conformance_level = 'disregard'
             size_increasing_zip_obfuscation = true
@@ -82,7 +82,7 @@ jobs:
             never_store_squash_times = true
             threads = 8
             spooling_buffers_size = 256 
-            
+            two_pass_vorbis_optimization_and_validation = true
             ['**/*?.ogg']
             transcode_ogg = false  
 
@@ -95,8 +95,8 @@ jobs:
             target_bitrate_control_metric = 96000
 
             ['**/*.jsonc']
-            minify_json = false
-            delete_bloat_keys = false
+            minify_json = true
+            delete_bloat_keys = true
 
 
             ['**/*.png']
