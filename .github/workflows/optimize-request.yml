@@ -67,7 +67,6 @@ jobs:
           options: |
             pack_directory = '/home/runner/work/PackSquashAction/PackSquashAction/staging/pack'
             output_file_path = '/home/runner/work/PackSquashAction/PackSquashAction/pack.zip'
-            
             recompress_compressed_files = true
             zip_compression_iterations = 5
             automatic_minecraft_quirks_detection = true
@@ -84,35 +83,27 @@ jobs:
             spooling_buffers_size = 256 
             two_pass_vorbis_optimization_and_validation = true
             ['**/*?.ogg']
-            transcode_ogg = false  
-
-
+            transcode_ogg = false 
             # Lossless music files get pitch shifted and compressed with good quality
             ['**/*?.{flac,wav}']
             channels = 2
             sampling_frequency = 44100
             target_pitch = 1.5
             target_bitrate_control_metric = 96000
-
             ['**/*.jsonc']
             minify_json = true
             delete_bloat_keys = true
-
-
             ['**/*.png']
             image_data_compression_iterations = 255
             color_quantization_target = 'none'
             maximum_width_and_height = 65535
             skip_alpha_optimizations = true
             color_quantization_dithering_level = 1
-
             ['**/*.{fsh,vsh}']
             shader_source_transformation_strategy = 'minify'
             is_top_level_shader = false
-
             ['**/*.properties']
             minify_properties = false
-
   post-result:
     runs-on: ubuntu-latest
     needs: optimize-pack
